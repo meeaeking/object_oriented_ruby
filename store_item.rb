@@ -52,31 +52,40 @@
 # a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
 # b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
 
+# Replace your “reader” and “writer” methods using the attr_reader and attr_writer shortcuts!
+
 class Storeitem
+
+  attr_reader: item
+  attr_reader: color
+  attr_reader: price
+  attr_reader: inventory
+  attr_writer: color
+  
   def initialize(item, color, price, inventory)
     @item = item
     @color = color
     @price = price
     @inventory = inventory
   end
-  def item
-    @item
-  end
+  # def item
+  #   @item
+  # end
 
-  def color
-    @color
-  end
+  # def color
+  #   @color
+  # end
 
-  def price
-    @price
-  end
-  def inventory
-    @inventory
-  end
+  # def price
+  #   @price
+  # end
+  # def inventory
+  #   @inventory
+  # end
 
-  def color=(color)
-    @color = color
-  end
+  # def color=(color)
+  #   @color = color
+  # end
 end
 
 dress = Storeitem.new("dress", "blue", 36, 22)
