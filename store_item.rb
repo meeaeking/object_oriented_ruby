@@ -92,3 +92,16 @@ dress = Storeitem.new(item: "dress", color: "blue", price: 35, inventory: 23)
 p dress
 p dress.color = "yellow"
 p dress.price
+
+class Food < Storeitem
+  attr_reader :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
+food = Food.new(item: "apple", color: "red", price: 3, inventory: 88, shelf_life: 2)
+
+p food
