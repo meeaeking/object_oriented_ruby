@@ -54,19 +54,18 @@
 
 # Replace your “reader” and “writer” methods using the attr_reader and attr_writer shortcuts!
 
+# Rewrite your store items using a class with a single options hash in the initialize method.
+
 class Storeitem
 
-  attr_reader: item
-  attr_reader: color
-  attr_reader: price
-  attr_reader: inventory
-  attr_writer: color
-  
-  def initialize(item, color, price, inventory)
-    @item = item
-    @color = color
-    @price = price
-    @inventory = inventory
+  attr_reader :item, :color, :price, :inventory
+  attr_writer :color
+
+  def initialize(input_options)
+    @item = input_options[:item]
+    @color = input_options[:color]
+    @price = input_options[:price]
+    @inventory = input_options[:inventory]
   end
   # def item
   #   @item
@@ -88,7 +87,8 @@ class Storeitem
   # end
 end
 
-dress = Storeitem.new("dress", "blue", 36, 22)
+dress = Storeitem.new(item: "dress", color: "blue", price: 35, inventory: 23)
 
-p dress.item 
+p dress
 p dress.color = "yellow"
+p dress.price
